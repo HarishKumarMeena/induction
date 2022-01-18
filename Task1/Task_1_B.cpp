@@ -4,6 +4,7 @@ using namespace std;
 
 int main()
 {
+    // decleaarig variables 
     int p, q, r, s;
     cin >> p >> q >> r >> s;
 
