@@ -3,6 +3,7 @@
 
 using namespace std;
 
+//checking if the number is prime
 int prime(int number)
 {
     if (number == 2)
@@ -25,6 +26,7 @@ int main()
     int n, x;
     cin >> n >> x;
 
+    //Considered some cases
     if (n == 2 && x > 0)
     {
         cout << "NO" << endl;
@@ -36,22 +38,16 @@ int main()
         cout << "YES" << endl;
         exit(0);
     }
-
+    
+    // using vector as we didn't how many prime numbers are going to be there
     vector<int> prime_num;
-
+    
     for (int i = 2; i <= n; i++)
     {
         if (prime(i) == 0)
             prime_num.push_back(i);
     }
 
-    // cout << "\nPrime Numbers b/w 2 and " << n << " are:" << endl;
-
-    // for (int j = 0; j < prime_num.size(); j++)
-    // {
-    //     cout << prime_num[j] << " ";
-    // }
-    // cout << endl;
 
     int count = 0;
     int check = 0;
@@ -59,17 +55,17 @@ int main()
     int k;
     for (k = 0; k < prime_num.size(); k++)
     {
+        // if we get the desired number of harshprime than we should stop the loop
         if (count == x && check == 0)
         {
             cout << "YES" << endl;
             check = 1;
             break;
         }
-
+        
+        //checking each cases 
         for (int l = 0; l < prime_num.size(); l++)
         {
-            // cout << "\nPairs: " << endl;
-            // cout << prime_num[l] << " " << prime_num[l + 1] << " Checking for " << prime_num[k] << endl;
 
             if (prime_num[l] + prime_num[l + 1] + 1 == prime_num[k])
             {
